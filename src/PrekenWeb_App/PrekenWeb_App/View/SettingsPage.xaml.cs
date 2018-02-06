@@ -10,17 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace PrekenWeb_App.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MenuPageView : ContentPage
+	public partial class SettingsPage : ContentPage
 	{
-	    public ListView MenuItems { get; set; }
-
-        public MenuPageView ()
-        {
-            MenuItems = new ListView();
-            //MenuItems.
-
+		public SettingsPage ()
+		{
 			InitializeComponent ();
-
 		}
 	}
 }

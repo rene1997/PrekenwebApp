@@ -11,10 +11,10 @@ namespace PrekenWeb_App
 	{
 		public App ()
 		{
-			InitializeComponent();
+			//InitializeComponent();
 
-		    //new PrekenWeb_App.Model.Main(this);
-            MainPage = new HomePage();
+		    new PrekenWeb_App.Model.Main(this);
+            //MainPage = new HomePage();
 		}
 
 		protected override void OnStart ()

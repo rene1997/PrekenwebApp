@@ -12,6 +12,7 @@ namespace PrekenWeb_App
 		public MainPage()
 		{
 			InitializeComponent();
+		    Icon = "menu.png";
 		}
 	}
 }

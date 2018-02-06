@@ -16,6 +16,7 @@ namespace PrekenWeb_App.Model
         {
             this._app = app;
             _pageHandler = new PageHandler(this); 
+            
         }
 
         public void SetMainPage(Page page)
