@@ -11,25 +11,19 @@ namespace PrekenWeb_App.ViewModel
     {
         private MenuPage _menu;
 
-        public MasterPageViewModel()
+        public MasterPageViewModel(MenuPage menu, IPageModel detailModel)
         {
             Title = "Home Page";
-            _menu = new MenuPage();
+            _menu = menu;
             Master = _menu;
-            Detail = new NavigationPage(new HomePage());
-            _menu.ListView.ItemSelected += OnItemSelected;
+            Detail = new NavigationPage(detailModel.ViewModel.ContentPage);
+            
         }
 
-        void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        public void SetDetailPage(IPageModel detailModel)
         {
-            var item = e.SelectedItem as MasterPageItem;
-            if (item != null)
-            {
-                //change page and hide menu
-                Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
-                _menu.ListView.SelectedItem = null;
-                IsPresented = false;
-            }
+            Detail = new NavigationPage(detailModel.ViewModel.ContentPage);
+            IsPresented = false;
         }
 
     }

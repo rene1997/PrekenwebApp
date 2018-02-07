@@ -20,14 +20,14 @@ namespace PrekenWeb_App.View
 		    {
 		        Title = "Home",
 		        IconSource = "home.png",
-		        TargetType = typeof(HomePage)
+		        TargetType = typeof(HomePageModel)
 		    });
 
 		    masterPageItems.Add(new MasterPageItem
 		    {
 		        Title = "Instellingen",
 		        IconSource = "settings.png",
-		        TargetType = typeof(SettingsPage)
+		        TargetType = typeof(SettingsPageModel)
 		    });
 
 
