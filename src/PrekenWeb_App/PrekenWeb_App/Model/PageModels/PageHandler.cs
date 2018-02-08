@@ -29,7 +29,7 @@ namespace PrekenWeb_App.Model.PageModels
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var item = e.SelectedItem as MasterPageItem;
+            var item = e.SelectedItem as MenuItem;
             if (item != null)
             {
                 IPageModel model = (IPageModel) Activator.CreateInstance(item.TargetType);

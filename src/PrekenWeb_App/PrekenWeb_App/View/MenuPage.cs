@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using PrekenWeb_App.Model.PageModels;
 using Xamarin.Forms;
+using MenuItem = PrekenWeb_App.Model.PageModels.MenuItem;
 
 namespace PrekenWeb_App.View
 {
@@ -15,15 +16,15 @@ namespace PrekenWeb_App.View
 
 		public MenuPage ()
 		{
-		    var masterPageItems = new List<MasterPageItem>();
-		    masterPageItems.Add(new MasterPageItem
+		    var masterPageItems = new List<MenuItem>();
+		    masterPageItems.Add(new MenuItem
 		    {
 		        Title = "Home",
 		        IconSource = "home.png",
 		        TargetType = typeof(HomePageModel)
 		    });
 
-		    masterPageItems.Add(new MasterPageItem
+		    masterPageItems.Add(new MenuItem
 		    {
 		        Title = "Instellingen",
 		        IconSource = "settings.png",
