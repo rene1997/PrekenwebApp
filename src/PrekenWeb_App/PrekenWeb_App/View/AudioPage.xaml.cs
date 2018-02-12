@@ -10,25 +10,22 @@ using Xamarin.Forms.Xaml;
 namespace PrekenWeb_App.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class HomePage : ContentPage
+	public partial class AudioPage : ContentPage
 	{
-	    public ListView SermonsView => sermonsView;
-        private HomePageViewModel _viewModel;
-	    
+	    public ListView SermonDetails => sermonDetails;
+	    private AudioPageViewModel _viewModel;
 
-        public HomePage (HomePageViewModel viewModel)
+		public AudioPage (AudioPageViewModel viewModel)
 		{
 		    this._viewModel = viewModel;
 			InitializeComponent ();
-		    sermonsView.ItemsSource = viewModel.Sermons;
-        }
+		    sermonDetails.ItemsSource = _viewModel.SermonDetails;
+		}
 
 	    public void RefreshListView()
 	    {
-	        sermonsView.ItemsSource = null;
-            sermonsView.ItemsSource = _viewModel.Sermons;
-        }
-
-
+	        sermonDetails.ItemsSource = null;
+	        sermonDetails.ItemsSource = _viewModel.SermonDetails;
+	    }
 	}
 }

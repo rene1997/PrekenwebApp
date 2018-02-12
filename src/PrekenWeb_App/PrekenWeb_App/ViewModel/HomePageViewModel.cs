@@ -17,12 +17,31 @@ namespace PrekenWeb_App.ViewModel
 
         private HomePageModel _model;
 
+        private HomePage _view;
+
 
         public HomePageViewModel(HomePageModel model)
         {
             this._model = model;
             Sermons = new ObservableCollection<Sermon>(_model.Sermons);
-            this.ContentPage = new HomePage(this);
+            
+            this._view = new HomePage(this);
+            this.ContentPage = _view;
+            _view.RefreshListView();
+            _view.SermonsView.ItemSelected += SermonsViewOnItemSelected;
+        }
+
+        private void SermonsViewOnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var item = e.SelectedItem as Sermon;
+            if (item != null)
+            {
+                if (item.Type == 1)
+                {
+                    _model.ViewSermon(item);
+                }
+                _view.SermonsView.SelectedItem = null;
+            }
         }
     }
 }

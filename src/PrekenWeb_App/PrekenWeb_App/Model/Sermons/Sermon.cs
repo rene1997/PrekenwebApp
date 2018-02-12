@@ -11,6 +11,9 @@ namespace PrekenWeb_App.Model.Sermons
         public String Minister { get; set; }
         public String Book { get; set; }
         public String Summary { get; set; }
+        public String IconSource { get; set; }
+        public String Day { get; set; }
+        
         public abstract int Type { get;}
     }
 }

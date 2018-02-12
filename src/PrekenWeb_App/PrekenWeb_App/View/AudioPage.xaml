@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PrekenWeb_App.View.AudioPage"
+             Title="Audiopreek">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Image Source="play.png" HeightRequest="32" HorizontalOptions="Start" Margin="10"/>
+                <Slider HorizontalOptions="EndAndExpand" MinimumWidthRequest="150" Margin="10"/>
+            </StackLayout>
+            <ScrollView VerticalOptions="FillAndExpand">
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Offline beschikbaar:" HorizontalOptions="StartAndExpand"/>
+                        <Switch HorizontalOptions="EndAndExpand"/>
+                    </StackLayout>
+                    <ListView x:Name="sermonDetails" HasUnevenRows="True" SeparatorVisibility="None" HorizontalOptions="FillAndExpand">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                        <Label Text="{Binding Title}" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                        <Label Text="{Binding Value}" HorizontalOptions="Center"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

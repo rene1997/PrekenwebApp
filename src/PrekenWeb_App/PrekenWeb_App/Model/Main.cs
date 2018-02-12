@@ -23,5 +23,10 @@ namespace PrekenWeb_App.Model
         {
             _app.MainPage = page;
         }
+
+        public void SetDetailPage(IPageModel model)
+        {
+            _pageHandler.SetDetailPage(model);
+        }
     }
 }

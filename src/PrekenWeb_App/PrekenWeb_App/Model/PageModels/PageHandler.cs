@@ -27,6 +27,13 @@ namespace PrekenWeb_App.Model.PageModels
             main.App.MainPage = _mainPage;
         }
 
+        public void SetDetailPage(IPageModel detailModel)
+        {
+            this._detailPage = detailModel;
+            _detailPage.SetMain(_main);
+            _mainPage.SetDetailPage(_detailPage);
+        }
+
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var item = e.SelectedItem as MenuItem;

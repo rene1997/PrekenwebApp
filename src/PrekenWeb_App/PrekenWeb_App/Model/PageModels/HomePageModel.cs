@@ -25,18 +25,24 @@ namespace PrekenWeb_App.Model.PageModels
             this._main = main;
         }
 
+        public void ViewSermon(Sermon sermon)
+        {
+            _main.SetDetailPage(new AudioPageModel((AudioSermon)sermon));
+        }
+
+
         private void FillTestData()
         {
-            Sermons.Add(new AudioSermon() {Book = "2 Korinthe 5:1",Minister = "Ds. J. Ijsselstein", PublishedDate = new DateTime(2018,02,06),SermonId = Sermons.Count,Summary = "lorem ipsum..."});
-            Sermons.Add(new AudioSermon() { Book = "1 Timotheus1:15", Minister = "Ds. S.W. Janse", PublishedDate = new DateTime(2018, 02, 06), SermonId = Sermons.Count, Summary = "lorem ipsum..." });
-            Sermons.Add(new AudioSermon() { Book = "Numeri 21:4-9", Minister = "Ds. J. Ijsselstein", PublishedDate = new DateTime(2018, 02, 06), SermonId = Sermons.Count, Summary = "lorem ipsum..." });
-            Sermons.Add(new AudioSermon() { Book = "Johannes 1: 44-46", Minister = "Ds. J.S. van der Net", PublishedDate = new DateTime(2018, 02, 02), SermonId = Sermons.Count, Summary = "lorem ipsum..." });
-            Sermons.Add(new AudioSermon() { Book = "Johannes 1: 1-18", Minister = "Ds. C.G. Vreugdenhil", PublishedDate = new DateTime(2018, 02, 02), SermonId = Sermons.Count, Summary = "lorem ipsum..." });
-            Sermons.Add(new AudioSermon() { Book = "Zondag 6 ", Minister = "Ds. J. Ijsselstein", PublishedDate = new DateTime(2018, 02, 02), SermonId = Sermons.Count, Summary = "lorem ipsum..." });
-            Sermons.Add(new AudioSermon() { Book = "1 Koningen 19:18", Minister = "Ds. C.G. Vreugdenhil", PublishedDate = new DateTime(2018, 02, 02), SermonId = Sermons.Count, Summary = "lorem ipsum..." });
-            Sermons.Add(new AudioSermon() { Book = "1 Samuel 51 :8", Minister = "Ds. J. Ijsselstein", PublishedDate = new DateTime(2018, 02, 02), SermonId = Sermons.Count, Summary = "lorem ipsum..." });
-            Sermons.Add(new ReadingSermon() { Book = "Psalmen 51:8", Minister = "Ds. C.G. Vreugdenhil", PublishedDate = new DateTime(2018, 1, 30), SermonId = Sermons.Count, Summary = "lorem ipsum..." });
-            Sermons.Add(new ReadingSermon() { Book = "Jesaja 1 :16-18", Minister = "Ds. J. Ijsselstein", PublishedDate = new DateTime(2018, 01, 30), SermonId = Sermons.Count, Summary = "lorem ipsum..." });
+            Sermons.Add(new AudioSermon() {IconSource = "audio.png" ,Book = "2 Korinthe 5:1",Minister = "Ds. J. Ijsselstein", PublishedDate = new DateTime(2018,02,06),SermonId = Sermons.Count,Summary = "lorem ipsum..."});
+            Sermons.Add(new AudioSermon() { IconSource = "audio.png", Book = "1 Timotheus1:15", Minister = "Ds. S.W. Janse", PublishedDate = new DateTime(2018, 02, 06), SermonId = Sermons.Count, Summary = "lorem ipsum..." });
+            Sermons.Add(new AudioSermon() { IconSource = "audio.png", Book = "Numeri 21:4-9", Minister = "Ds. J. Ijsselstein", PublishedDate = new DateTime(2018, 02, 06), SermonId = Sermons.Count, Summary = "lorem ipsum..." });
+            Sermons.Add(new AudioSermon() { IconSource = "audio.png", Book = "Johannes 1: 44-46", Minister = "Ds. J.S. van der Net", PublishedDate = new DateTime(2018, 02, 02), SermonId = Sermons.Count, Summary = "lorem ipsum..." });
+            Sermons.Add(new AudioSermon() { IconSource = "audio.png", Book = "Johannes 1: 1-18", Minister = "Ds. C.G. Vreugdenhil", PublishedDate = new DateTime(2018, 02, 02), SermonId = Sermons.Count, Summary = "lorem ipsum..." });
+            Sermons.Add(new AudioSermon() { IconSource = "audio.png", Book = "Zondag 6 ", Minister = "Ds. J. Ijsselstein", PublishedDate = new DateTime(2018, 02, 02), SermonId = Sermons.Count, Summary = "lorem ipsum..." });
+            Sermons.Add(new AudioSermon() { IconSource = "audio.png", Book = "1 Koningen 19:18", Minister = "Ds. C.G. Vreugdenhil", PublishedDate = new DateTime(2018, 02, 02), SermonId = Sermons.Count, Summary = "lorem ipsum..." });
+            Sermons.Add(new AudioSermon() { IconSource = "audio.png", Book = "1 Samuel 51 :8", Minister = "Ds. J. Ijsselstein", PublishedDate = new DateTime(2018, 02, 02), SermonId = Sermons.Count, Summary = "lorem ipsum..." });
+            Sermons.Add(new ReadingSermon() { IconSource = "book.png", Book = "Psalmen 51:8", Minister = "Ds. C.G. Vreugdenhil", PublishedDate = new DateTime(2018, 1, 30), SermonId = Sermons.Count, Summary = "lorem ipsum..." });
+            Sermons.Add(new ReadingSermon() { IconSource = "book.png", Book = "Jesaja 1 :16-18", Minister = "Ds. J. Ijsselstein", PublishedDate = new DateTime(2018, 01, 30), SermonId = Sermons.Count, Summary = "lorem ipsum..." });
         }
     }
 }

@@ -6,19 +6,30 @@
              Icon="home.png">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="SermonsView">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Vertical">
-                                <Label Text="{Binding Minister}"/>
-                                <Label Text="{Binding Summary}"/>
-                                <Label Text="{Binding Book}"/>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            
+            <Label Text="Nieuwste preken:" FontSize="20" HorizontalOptions="Center"></Label>
+            <ScrollView VerticalOptions="FillAndExpand" >
+                <ListView x:Name="sermonsView" HasUnevenRows="True" SeparatorColor="Accent">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Vertical" >
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                        <Image Source="{Binding IconSource}" HeightRequest="32" HorizontalOptions="StartAndExpand"/>
+                                        <Label Text="{Binding PublishedDate}" HorizontalOptions="EndAndExpand"/>
+                                    </StackLayout>
+                                    <Label Text="{Binding Minister}" FontSize="16" HorizontalOptions="CenterAndExpand"/>
+                                    <Label Text="{Binding Summary}" HorizontalOptions="CenterAndExpand"/>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                        <Label Text="{Binding Day}" HorizontalOptions="StartAndExpand"/>
+                                        <Label Text="{Binding Book}" HorizontalOptions="EndAndExpand"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
