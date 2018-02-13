@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using PrekenWeb_App.Model.DependencyClasses;
 using PrekenWeb_App.Model.Sermons;
 using PrekenWeb_App.ViewModel;
+using Xamarin.Forms;
+
 
 namespace PrekenWeb_App.Model.PageModels
 {
@@ -23,6 +26,16 @@ namespace PrekenWeb_App.Model.PageModels
         public void SetMain(Main main)
         {
             this._main = main;
+        }
+
+        public void PlaySermon()
+        {
+            DependencyService.Get<IPlaySermon>().PlayOnlineSermon(_sermon.SermonUrl);
+        }
+
+        public void StopSermon()
+        {
+            DependencyService.Get<IPlaySermon>().StopOnlineSermon(_sermon.SermonUrl);
         }
     }
 }

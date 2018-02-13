@@ -27,5 +27,15 @@ namespace PrekenWeb_App.View
 	        sermonDetails.ItemsSource = null;
 	        sermonDetails.ItemsSource = _viewModel.SermonDetails;
 	    }
+
+	    private void Button_OnClicked(object sender, EventArgs e)
+	    {
+	        _viewModel.PlaySermon();
+	    }
+
+	    private void Button_OnClicked2(object sender, EventArgs e)
+	    {
+	        _viewModel.StopSermon();
+	    }
 	}
 }

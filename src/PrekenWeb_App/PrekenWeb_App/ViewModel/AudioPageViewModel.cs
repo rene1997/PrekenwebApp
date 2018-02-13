@@ -29,6 +29,11 @@ namespace PrekenWeb_App.ViewModel
             this.ContentPage = _view;
         }
 
+        public void PlaySermon()
+        {
+            _model.PlaySermon();
+        }
+
         private void FillData()
         {
             SermonDetails.Add(new SermonDetail{Title = "Voorganger:", Value = _model._sermon.Minister});
@@ -37,6 +42,11 @@ namespace PrekenWeb_App.ViewModel
             SermonDetails.Add(new SermonDetail { Title = "Gepubliceerd:", Value = _model._sermon.PublishedDate.ToLongDateString()});
             SermonDetails.Add(new SermonDetail { Title = "Over de preek:", Value = _model._sermon.Summary });
             SermonDetails.Add(new SermonDetail { Title = "Voorganger", Value = _model._sermon.Minister });
+        }
+
+        public void StopSermon()
+        {
+            _model.StopSermon();
         }
     }
 

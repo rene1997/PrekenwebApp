@@ -15,6 +15,8 @@
                         <Label Text="Offline beschikbaar:" HorizontalOptions="StartAndExpand"/>
                         <Switch HorizontalOptions="EndAndExpand"/>
                     </StackLayout>
+                    <Button HorizontalOptions="FillAndExpand" Text="speel af" Clicked="Button_OnClicked"></Button>
+                    <Button HorizontalOptions="FillAndExpand" Text="stop afspelen" Clicked="Button_OnClicked2"></Button>
                     <ListView x:Name="sermonDetails" HasUnevenRows="True" SeparatorVisibility="None" HorizontalOptions="FillAndExpand">
                         <ListView.ItemTemplate>
                             <DataTemplate>
